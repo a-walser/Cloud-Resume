@@ -1,0 +1,9 @@
+Planned site improvements:
+
+Javascript - Visitor counter
+DynamoDB - Visitor counter DB
+AWS API Gateway / Lambda - API requests for updating visitor counter
+Python - API requests for updating visitor counter
+Testing - Unit tests (Python)
+Terraform - IaC
+Github Actions - CI/CD

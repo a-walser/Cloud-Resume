@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Andrew Walser - Resume</title>
+
+<!-- 
+Hello! Thanks for checking out my Cloud-based resume!
+ 
+Phone: (319)350-2286
+Email: Andrewwalser@gmail.com
+
+--------------------
+
+This site was created using multiple technologies and processes. Below is a full description of each step that was taken to set up and maintain the page:
+
+** Amazon Web Services **
+IAM - Following security best practices, this project is managed through multiple roles configured with IAM including MFA.
+Budgeting - This project uses a (near) zero-dollar budgeting limit with automated notifications if the limit is passed
+AWS S3 - File hosting
+AWS Cloudfront - CDN for static content & https configuration
+AWS Route 53 - DNS Service & Domain name registration
+AWS Certificate Manager: Valid certificate for the domain (a-walser.com) and subdomain (www.)
+AMS Lambda - Uses public function URLs and private API gateways to handle updating and retrieving visitor count numbers.
+
+** Web Development **
+HTML / CSS - Basic website information and design
+Javascript - API invocations
+
+** Version Control **
+git - Manage local repo
+gitlab - Store and display public repo 
+	- Public url: https://gitlab.com/awalser-public/Cloud-resume
+ssh - Cloning & pushing commits
+
+-->
+
+<meta name="viewport" content="width=device-width"/>
+<meta name="description" content="The resume of Andrew Walser, Senior Automation Engineer."/>
+<meta charset="UTF-8"> 
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="style.css">
+<link href='https://fonts.googleapis.com/css?family=Rokkitt:400,700|Lato:400,300' rel='stylesheet' type='text/css'>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<!-- Calls the update API to increment the visitor count -->
+<script>
+	fetch('https://hf5hbdgcjfabnhk5lrhqcpolgy0jzsjz.lambda-url.us-east-2.on.aws/')
+</script>
+
+<!-- Reads the visitor count from the public retrieval API -->
+<script>
+	fetch('https://gkuf22oegbjgm3u54m7n4vh2pq0gsoyt.lambda-url.us-east-2.on.aws/') 
+	  .then(response => response.json())
+	  .then((data) => {
+	document.getElementById('visitor_counter').innerText = data.Count
+	  })
+</script>
+
+</head>
+<body id="top">
+<div id="cv" class="instaFade">
+	<div class="mainDetails">
+		<div id="headshot" class="quickFade">
+			<!--- Example of Image hosting through S3 with Cloudfront: -->
+			<img src="https://d2sffcbn1zqrs1.cloudfront.net/headshot.jpg" alt="Andrew Walser" />
+		</div>
+
+		
+		<div id="name">
+			<h1 class="quickFade delayTwo">Andrew Walser</h1>
+			<h2 class="quickFade delayThree">Senior Automation Engineer</h2>
+			<h3 class="quickFade delayFour">Loveland CO, US</h3>
+		</div>
+		
+		
+		<div id="contactDetails" class="quickFade delayFour">
+			<ul>
+			<li><div class="contactDetailsText">
+				<span class="fa fa-phone fa-fw"></span> | (319)350-2286
+			</div></li>
+			<li><div class="contactDetailsText">
+				<span class="fa fa-envelope fa-fw"></span> | <a href="mailto:andrewwalser@gmail.com" target="_blank">andrewwalser@gmail.com</a>
+			</div></li>
+			<li><div class="contactDetailsText">
+				<span class="fa fa-gitlab fa-fw"></span> | <a href="https://gitlab.com/a-walser" target="_blank">Gitlab</a>	
+			</div></li>
+			<li><div class="contactDetailsText">
+				<span class="fa fa-linkedin fa-fw"></span> | <a href="https://www.linkedin.com/in/a-walser/" target="_blank">LinkedIn</a>
+			</div></li>
+			</ul>
+		</div>
+
+		<div class="clear"></div>
+	
+		<div id="contactDetails" class="quickFade">
+			<p><br> <u><span id="visitor_counter" class="quickFade delayFive"> </span></u> recruiters have viewed this site.</p>
+		</div>
+
+		<div id="siteDescription" class="quickFade">
+			<p class="subDetails"> <br> *This site was built using DevOps principles. 
+				<br> Inspect the header to see a detailed description of the technologies involved !<br>
+				<!-- See <head> section for more information -->
+			</p>
+		</div>
+		
+		<div class="clear"></div>
+	</div>
+	
+	<div id="mainArea" class="quickFade delayFive">
+		<section>
+			<article>
+				<div class="sectionTitle">
+					<h1>Personal Profile</h1>
+				</div>
+				
+				<div class="sectionContent">
+					<p>Experienced automation engineer with 13 years of expertise in Agile (Scrum) environments, specializing in OOP, the SDLC, and CI/CD processes. Proven track record in optimizing workflows, reducing operational costs, and ensuring high system reliability across projects in education, aviation, and financial software. Successfully led initiatives that resulted in a 30% reduction in server and manpower costs while maintaining 99.9% system uptime.
+					</p>
+				</div>
+			</article>
+			<div class="clear"></div>
+		</section>
+		
+		<section>
+			<div class="sectionTitle">
+				<h1>Technical Skills</h1>
+			</div>
+				<div class="sectionContent">
+					<article>
+						<div class="info">
+							<h2>Containers, IaC & CI/CD</h2>
+							<div class="info"></div>
+							<div class="col-sm-offset-1 col-sm-12 subDetails">	
+								<span class="skill badge">Docker  </span>
+								<span class="skill badge">Kubernetes  </span>
+								<span class="skill badge">Terraform</span>	
+								<span class="skill badge">Jenkins  </span>
+								<span class="skill badge">Fastlane  </span>
+								<span class="skill badge">Bitbucket</span>	
+								<span class="skill badge">git  </span>
+							</div>
+						</div>
+					</article>
+					<article>
+						<div class="info">
+							<br/>
+							<h2>Programming &amp; Scripting</h2>
+							<div class="info"></div>
+							<div class="col-sm-offset-1 col-sm-12 subDetails">	
+								<span class="skill badge">Java  </span>
+								<span class="skill badge">Python  </span>
+								<span class="skill badge">Swift</span>	
+								<span class="skill badge">C#  </span>
+								<span class="skill badge">Bash  </span>
+								<span class="skill badge">Batch</span>	
+								<span class="skill badge">Groovy  </span>
+							</div>
+						</div>
+					</article>
+					<article>
+						<div class="info">
+							<br/>
+							<h2>Cloud, DBs &amp; Servers</h2>
+							<div class="info"></div>
+							<div class="col-sm-offset-1 col-sm-12 subDetails">	
+								<span class="skill badge">AWS  </span>
+								<span class="skill badge">WildFly  </span>
+								<span class="skill badge">MySQL</span>	
+								<span class="skill badge">Postgres  </span>
+								<span class="skill badge">Cassandra  </span>
+								<span class="skill badge">dynamoDB</span>
+							</div>
+						</div>
+					</article>
+					<article>
+						<div class="info">
+							<br/>
+							<h2>Testing</h2>
+							<div class="info"></div>
+							<div class="col-sm-offset-1 col-sm-12 subDetails">	
+								<span class="skill badge">Postman  </span>
+								<span class="skill badge">ReadyAPI  </span>
+								<span class="skill badge">Selenium</span>	
+								<span class="skill badge">Jmeter  </span>
+								<span class="skill badge">Cucumber</span>
+							</div>
+						</div>
+					</article>
+					<article>
+						<div class="info">
+							<br/>
+							<h2>Project Management</h2>
+							<div class="info"></div>
+							<div class="col-sm-offset-1 col-sm-12 subDetails">	
+								<span class="skill badge">Agile (Scrum) </span>
+								<span class="skill badge">JIRA  </span>
+								<span class="skill badge">Rally</span>	
+								<span class="skill badge">VersionOne  </span>
+								<span class="skill badge">NewRelic  </span>
+								<span class="skill badge">ServiceNow  </span>
+							</div>
+						</div>
+					</article>
+				</div>
+				<div class="clear"></div>
+		</section>
+		
+		<section>
+			<div class="sectionTitle">
+				<h1>Work Experience</h1>
+			</div>
+			
+			<div class="sectionContent">
+				<article>
+					<h2>Xpanxion L.L.C.</h2>
+					<h2>Senior Software Development Engineer - Elavon/US Bank (Remote)</h2>
+					<p class="subDetails">June 2018 to Present
+					<br>
+						<li>Streamlined Jenkins CI/CD pipelines for deployments, testing, and release report generation.				
+						</li>
+						<li>Maintained 99.9% uptime in 24/7 support rotation for WildFly/Cassandra production environments.
+						</li>
+						<li>Led the migration of data center services from on-prem to AWS, reducing server and manpower costs by 30%.
+						</li>
+						<li>Resolved critical production issues by opening incidents in ServiceNow, analyzing logs in Kibana and Splunk, and facilitating communication across multiple teams and product owners.
+						</li>
+						<li>Developed API tests in Java/Cucumber and ReadyAPI frameworks for Elavon's payment gateway solution.
+						</li>
+						<li>Enhanced UI Selenium test automation for Elavon's gift card processor, Fanfare.
+						</li>
+					</p>
+				</article>
+				
+				<article>
+					<h2>Senior Software Development Engineer - The Weather Company (Hybrid)</h2>
+					<p class="subDetails"> October 2016 to June 2018
+					<br>
+						<li>Consulted TWC's manual and automation QA teams regarding their mobile aviation application, PilotBrief (iOS).
+						</li>
+						<li>Orchestrated and maintained CI/CD pipelines using Xcode Server and Jenkins, improving the build process.
+						</li>
+						<li>Collected and assessed analytics using Firebase, providing actionable insights into application crashes.
+						</li>
+					</p>
+					</article>
+				
+				<article>
+					<h2>Pearson Education</h2>
+					<h2>Full Stack Software Developer (On-site)</h2>
+					<p class="subDetails">April 2015 to October 2016
+					<br>
+						<li>Developed new features for Pearson's ePEN2 scoring platform in a Java/JavaScript framework
+						</li>
+						<li>Wrote and executed stored procedures in SQL Server, resolving DB issues or implementing improvements.
+						</li>
+						<li>Audited server logs to diagnose error root causes using Splunk to assist the team in fixing application issues.
+						</li>
+					</p>
+				</article>
+					
+				<article>
+					<h2>Software Quality Assurance Analyst (On-site)</h2>
+					<p class="subDetails">June 2012 to April 2015
+					<br>
+						<li>Designed automation tools to simulate student test taking using Selenium, Sikuli, UFT(QTP) and TestPlant</li>
+						<li>Performed automated UAT validation against Pearson's PearsonAccess site before releases
+						</li>
+						<li>Optimized publishing and authoring tools for Pearson’s TestHear and TestNav technologies which reduced daily runtimes from ~10 minutes to ~30 seconds
+						</li>
+						<li>Maintained lab equipment and configurations for Windows, Mac, iOS, Android, and ChromeOS systems
+						</li>
+					</p>
+				</article>
+
+				<article>
+					<h2>Software Tester Intern (On-site)</h2>
+					<p class="subDetails">Jan 2012 to June 2012
+					<br>
+						<li> Automated online test taking to improve efficiency with human software testing</li>
+						<li>Set up a version control system for multiple Linux hosts utilizing Perforce and bash scripting</li>
+						<li>Tested Pearson's online testing software to find bugs and vulnerabilities.	</li>
+					</p>
+				</article>
+				
+				<article>
+					<h2>Infrastructure Management Intern (On-site)</h2>
+					<p class="subDetails">May 2011 to Jul 2011
+					<br>
+						<li>Configured and audited linux servers</li>
+						<li>Created backups and managed storage</li>
+						<li> Worked with penetration testing and vulnerability scanners</li>
+					</p>
+				</article>
+
+
+			</div>
+			<div class="clear"></div>
+		</section>
+		
+		<section>
+			<div class="sectionTitle">
+				<h1>Certifications</h1>
+			</div>
+			
+			<div class="sectionContent">
+				<article>
+					<h2>AWS Certified Solutions Architect - Associate</h2>
+					<p class="subDetails">In Progress - ETA August 2024 <br><br></p>
+				</article>
+				<article>
+					<h2>ISTQB Foundation Level</h2>
+					<p class="subDetails">Completed August 2017</p>
+				</article>
+			</div>
+			<div class="clear"></div>
+		</section>
+
+		<section>
+			<div class="sectionTitle">
+				<h1>Education</h1>
+			</div>
+			
+			<div class="sectionContent">
+				<article>
+					<h2>The University of Iowa</h2>
+					<p class="subDetails">Completed May 2012</p>
+					<p>B.B.A., Bachelor of Business Administration<br>
+					Major in Management Information Systems</p>
+				</article>
+				
+				<article>
+					<h2>Kirkwood Community College</h2>
+					<p class="subDetails">Completed December 2010</p>
+					<p>A.A., Associate of the Arts Degree<br>
+					Emphasis in Business Administration</p>
+				</article>
+			</div>
+			<div class="clear"></div>
+		</section>
+
+
+		<section>
+			<div class="sectionTitle">
+				<h1>This site was created with</h1>
+			</div>
+			
+			<div class="sectionContent">
+				<ul class="keySkills">
+					<li>AWS IAM</li>
+					<li>AWS Elastic BeanStalk</li>
+					<li>AWS Budgeting</li>
+					<li>AWS S3</li>
+					<li>AWS Cloudfront</li>
+					<li>AWS Route53</li>
+					<li>AWS Cert Manager</li>
+					<li>AWS Lambda</li>
+					<li>AWS API Gateway</li>
+					<li>HTML</li>
+					<li>CSS</li>
+					<li>gitlab</li>
+				</ul>
+			</div>
+			<div class="clear"></div>
+		</section>
+	</div>
+</div>
+</body>
+</html>
