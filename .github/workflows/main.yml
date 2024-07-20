@@ -1,8 +1,9 @@
-name: Deploy to AWS S3
+name: Deploy to AWS S3 
 on:
   push:
-    branches:
-      - main
+    branches: ['main']
+    paths: ['Website/**']
+
 
 jobs:
   deploy:
