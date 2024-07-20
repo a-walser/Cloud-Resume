@@ -2,7 +2,7 @@ name: Deploy to AWS S3
 on:
   push:
     branches: 'main'
-    paths: 'Website/*'
+    paths: 'Website/**'
 
 jobs:
   deploy:
@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -20,4 +20,4 @@ jobs:
           aws-region: us-east-2
 
       - name: Deploy static site to S3 bucket
-        run: aws s3 sync . s3://a-walser.com --delete
+        run: aws s3 sync Websites s3://a-walser.com --delete
