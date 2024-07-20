@@ -2,7 +2,6 @@ name: Deploy to AWS S3
 on:
   push:
     branches: 'main'
-    paths: 'Website/**'
 
 jobs:
   deploy:
@@ -13,11 +12,11 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
+        uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-2
 
       - name: Deploy static site to S3 bucket
-        run: aws s3 sync Websites s3://a-walser.com --delete
+        run: aws s3 sync Website s3://a-walser.com --delete
