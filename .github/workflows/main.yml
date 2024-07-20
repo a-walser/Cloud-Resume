@@ -20,3 +20,6 @@ jobs:
 
       - name: Deploy static site to S3 bucket
         run: aws s3 sync Website s3://a-walser.com --delete
+        run: aws cloudfront create-invalidation \
+    --distribution-id E3MII3053ULUD9 \
+    --paths "/*"
