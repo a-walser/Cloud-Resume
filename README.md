@@ -25,6 +25,9 @@ The live hosted version of this project can be viewed on: https://a-walser.com
 ## ** Version Control **
 - git - Manage local repo
 
-- gitlab - Store and display public repo
+- Github - Store and display public repo
 
 - ssh - Cloning & pushing commits
+
+** CI/CD **
+- Github Actions - Deploys all updated files from 'Websites/' to AWS S3 when a push occurs on the main branch
