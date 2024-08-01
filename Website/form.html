@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Automation Test Form</title> 
+
+<!-- 
+Hello! This form exists to serve as an example for a Playwright automation test developed using Typescript.
+-->
+<meta name="viewport" content="width=device-width"/>
+<meta name="description" content="Example form for a Playwright automation test"/>
+<meta charset="UTF-8"> 
+
+<link type="text/css" rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+<div id="cv" class="instaFade">
+	<div id="name">
+		<h1> Want to sign up for my (non-existent) newsletter? Fill out the form below!	<br> <br>
+	</div>
+	
+	<div id="sectionContent">
+			<form>
+    <label for="name">Name:</label>
+    <input type="text" name="name"><br><br>
+    <label for="sex">How impressed are you?</label>
+    <input type="radio" name="impressedLevel" id="very" value="very">
+    <label for="very">Very</label>
+    <input type="radio" name="impressedLevel" id="bestThingEver" value="bestThingEver">
+    <label for="bestThingEver">This is the best thing I've ever seen!</label> <br><br>
+    <label for="country">Country: </label>
+    <select name="country" id="country">
+        <option>Select an option</option>
+        <option value="usa">USA</option>
+        <option value="other">Other</option>
+    </select><br><br>
+    <label for="message">Message:</label><br>
+    <textarea name="message" id="message" cols="30" rows="4"></textarea><br><br>
+    <input type="checkbox" name="newsletter" id="newsletter">
+    <label for="newsletter">Subscribe?</label><br><br>
+    <input type="submit" value="Submit">
+	
+	<p> 
+	<br>Note: This is not a real form. This page exists soley as an example website to be used with Playwright Test automation. Find the test code here:
+	<github link WIP> </p>
+			</form>
+	</div>
+</div>
+</body>
+</html>
