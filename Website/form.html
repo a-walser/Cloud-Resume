@@ -16,18 +16,18 @@ Hello! This form exists to serve as an example for a Playwright automation test 
 </head>
 <body>
 <div id="cv" class="instaFade">
-	<div id="name">
+	<div id="header">
 		<h1> Want to sign up for my (non-existent) newsletter? Fill out the form below!	<br> <br>
 	</div>
 	
-	<div id="sectionContent">
-			<form>
+	<div id="formContent">
+	<form>
     <label for="name">Name:</label>
     <input type="text" name="name"><br><br>
-    <label for="sex">How impressed are you?</label>
-    <input type="radio" name="impressedLevel" id="very" value="very">
+    <label for="impressionLevel">How impressed are you?</label>
+    <input type="radio" name="impressionLevel" id="very" value="very">
     <label for="very">Very</label>
-    <input type="radio" name="impressedLevel" id="bestThingEver" value="bestThingEver">
+    <input type="radio" name="impressionLevel" id="bestThingEver" value="bestThingEver">
     <label for="bestThingEver">This is the best thing I've ever seen!</label> <br><br>
     <label for="country">Country: </label>
     <select name="country" id="country">
@@ -40,11 +40,15 @@ Hello! This form exists to serve as an example for a Playwright automation test 
     <input type="checkbox" name="newsletter" id="newsletter">
     <label for="newsletter">Subscribe?</label><br><br>
     <input type="submit" value="Submit">
-	
+    </form>
+	</div>
+    
+    <div id="disclaimer">    
 	<p> 
-	<br>Note: This is not a real form. This page exists soley as an example website to be used with Playwright Test automation. Find the test code here:
-	<github link WIP> </p>
-			</form>
+	<br>Note: This is not a real form. 
+	<br>This page exists as an example website to be used with Playwright Test automation. 
+	<br>Find the test code <a href="https://github.com/a-walser/PlaywrightExampleTests" target="_blank">here.</a>
+	</p>
 	</div>
 </div>
 </body>
