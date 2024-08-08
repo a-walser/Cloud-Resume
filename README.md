@@ -1,4 +1,4 @@
-# Andrew Walser's Cloud-Based Resume
+# Andrew Walser's Cloud-Based Resume 
 
 ### The purpose of this project is to create a central location of not only my skills, education, and employment history, but to also display a real life example of my coding, infrastructure, and automation knowledge.
 
